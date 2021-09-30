@@ -6,11 +6,6 @@
   import { get } from "svelte/store";
   export let country;
 
-  console.log("country tooltip");
-  console.log(country);
-  console.log(country["name_fr"]);
-  console.log($locale);
-
   let companiesDict;
 
   json("../data/dict_entreprises.json").then((json) => {

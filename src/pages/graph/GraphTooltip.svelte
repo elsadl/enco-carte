@@ -26,17 +26,8 @@
     }
 
     if (Math.abs(top - top2) < 20) {
-      console.log("cat???")
-      console.log(cat)
-      console.log("top")
-      console.log(top)
-      console.log("top2")
-      console.log(top2)
       if (top > top2) {
-        console.log("on décale!!!!")
         translateY = 20 - (top - top2);
-        console.log("top2 - top")
-        console.log(20 - (top - top2))
       }
     }
 

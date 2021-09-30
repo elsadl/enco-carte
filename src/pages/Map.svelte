@@ -21,7 +21,6 @@
 
   json("../data/nuts_with_data.json").then((json) => {
     countriesEU = feature(json, json.objects.nutsrg);
-    console.log(countriesEU);
 
     otherCountries = feature(json, json.objects.cntrg);
   });

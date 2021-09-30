@@ -12,9 +12,6 @@
 
   let dictPays;
 
-  console.log("data company");
-  console.log(data);
-
   let snapshot_rows = [
     "revenue",
     "net_profit",
@@ -26,7 +23,6 @@
 
   json("../data/dict_pays.json").then((data) => {
     dictPays = data;
-    console.log(dictPays);
   });
 
   function getTranslation(string) {

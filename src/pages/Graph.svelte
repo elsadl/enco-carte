@@ -18,9 +18,6 @@
   export let unit;
   export let graphID;
 
-  console.log("data de graph");
-  console.log(data);
-
   let width;
   let hovered = null;
 
@@ -71,8 +68,6 @@
     Math.max(...array["cat1"]),
     Math.max(...array["cat2"])
   );
-
-  console.log(graphInfos);
 
   if (graphLimits["min"] > 0) {
     graphLimits["min"] = 0;

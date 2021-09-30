@@ -15,7 +15,6 @@
   import { onMount, onDestroy } from "svelte";
 
   const setupPage = () => {
-    console.log("route?");
     for (let [path, route] of Object.entries(routes)) {
       page(
         path,

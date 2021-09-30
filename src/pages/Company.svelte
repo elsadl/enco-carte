@@ -29,7 +29,6 @@
     dataToDisplay["ressources"] = entreprise.ressources;
     dataToDisplay["website"] = entreprise.website;
 
-    console.log(dataToDisplay["ressources"]);
     if (dataToDisplay["ressources"][0] == " ") {
       dataToDisplay["ressources"] = null;
     }
