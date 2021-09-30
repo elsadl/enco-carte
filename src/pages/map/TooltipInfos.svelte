@@ -63,20 +63,20 @@
       <p class="row-label label">{$_("total_beds_per_inhabitants")}</p>
       <p>
         {@html country.hospitals.beds_per_inhabitants
-          ? country.hospitals.beds_per_inhabitants.toLocaleString("de-DE")
+          ? country.hospitals.beds_per_inhabitants.toLocaleString("de-DE") + " ‰"
           : "—"}
       </p>
       <p>
         {@html country.nursing_homes.beds_per_inhabitants
-          ? country.nursing_homes.beds_per_inhabitants.toLocaleString("de-DE")
+          ? country.nursing_homes.beds_per_inhabitants.toLocaleString("de-DE") + " ‰"
           : "—"}
       </p>
-      <p class="row-label label">{$_("%_for_profit_beds")}</p>
-      <p>
+      <p class="row-label label bolder">{$_("%_for_profit_beds")}</p>
+      <p class="bolder">
         {#if country.id == "BE"}
           {#if country.hospitals.for_profit_beds}
             {#each country.hospitals.for_profit_beds.split("-") as el}
-              {el.trim().substring(0, 2)}
+              {el.trim().substring(0, 2)} %
               <span>({getTranslation(el.trim().match(/\((.*)\)/)[1])})</span>
               <br />
             {/each}
@@ -85,15 +85,15 @@
           {/if}
         {:else}
           {@html country.hospitals.for_profit_beds
-            ? country.hospitals.for_profit_beds.toLocaleString("de-DE")
+            ? country.hospitals.for_profit_beds.toLocaleString("de-DE") + " %"
             : "—"}
         {/if}
       </p>
-      <p>
+      <p class="bolder">
         {#if country.id == "BE"}
           {#if country.nursing_homes.for_profit_beds}
             {#each country.nursing_homes.for_profit_beds.split("-") as el}
-              {el.trim().substring(0, 2)}
+              {el.trim().substring(0, 2)} %
               <span>({getTranslation(el.trim().match(/\((.*)\)/)[1])})</span>
               <br />
             {/each}
@@ -102,7 +102,7 @@
           {/if}
         {:else}
           {@html country.nursing_homes.for_profit_beds
-            ? country.nursing_homes.for_profit_beds.toLocaleString("de-DE")
+            ? country.nursing_homes.for_profit_beds.toLocaleString("de-DE") + " %"
             : "—"}
         {/if}
       </p>
@@ -245,5 +245,9 @@
 
   .tooltip-body li a:hover {
     opacity: 0.4;
+  }
+
+  .bolder {
+    font-weight: bold;
   }
 </style>
