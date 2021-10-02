@@ -5,10 +5,6 @@
   import { dictionary, locale } from 'svelte-i18n';
   import { get } from 'svelte/store';
 
-  console.log("get(dictionary)");
-  console.log(get(dictionary));
-
-
   export let width;
   export let height;
   export let margin;
