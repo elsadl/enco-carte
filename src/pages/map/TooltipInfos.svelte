@@ -4,11 +4,13 @@
 
   import { dictionary, locale, _ } from "svelte-i18n";
   import { get } from "svelte/store";
+  import { baseurl } from "../../stores";
+  
   export let country;
 
   let companiesDict;
 
-  json("../data/dict_entreprises.json").then((json) => {
+  json("data/dict_entreprises.json").then((json) => {
     companiesDict = json;
   });
 
@@ -58,12 +60,14 @@
       <p class="row-label label">{$_("total_beds_per_inhabitants")}</p>
       <p>
         {@html country.hospitals.beds_per_inhabitants
-          ? country.hospitals.beds_per_inhabitants.toLocaleString("de-DE") + " ‰"
+          ? country.hospitals.beds_per_inhabitants.toLocaleString("de-DE") +
+            " ‰"
           : "—"}
       </p>
       <p>
         {@html country.nursing_homes.beds_per_inhabitants
-          ? country.nursing_homes.beds_per_inhabitants.toLocaleString("de-DE") + " ‰"
+          ? country.nursing_homes.beds_per_inhabitants.toLocaleString("de-DE") +
+            " ‰"
           : "—"}
       </p>
       <p class="row-label label bolder">{$_("%_for_profit_beds")}</p>
@@ -97,7 +101,8 @@
           {/if}
         {:else}
           {@html country.nursing_homes.for_profit_beds
-            ? country.nursing_homes.for_profit_beds.toLocaleString("de-DE") + " %"
+            ? country.nursing_homes.for_profit_beds.toLocaleString("de-DE") +
+              " %"
             : "—"}
         {/if}
       </p>
@@ -110,7 +115,7 @@
         <ul>
           {#each country.hospitals.companies as company}
             <li>
-              <a class="to-company" href={"/company/" + company}
+              <a class="to-company" href={baseurl + "company/" + company}
                 >{companiesDict[company]}</a
               >
             </li>
@@ -123,7 +128,7 @@
         <ul>
           {#each country.nursing_homes.companies as company}
             <li>
-              <a class="to-company" href={"/company/" + company}
+              <a class="to-company" href={baseurl + "company/" + company}
                 >{companiesDict[company]}</a
               >
             </li>

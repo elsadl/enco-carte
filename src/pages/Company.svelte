@@ -6,6 +6,7 @@
   import { json } from "d3-fetch";
 
   import { locale, _ } from "svelte-i18n";
+  import { baseurl } from "../stores";
 
   export let id;
 
@@ -79,10 +80,8 @@
 
 <div>
   <div class="nav">
-    <LocaleSwitcher
-      on:locale-changed={(e) => locale.set(e.detail)}
-    />
-    <a href="/" class="back">{$_("back_map")} →</a>
+    <LocaleSwitcher on:locale-changed={(e) => locale.set(e.detail)} />
+    <a href={baseurl} class="back">{$_("back_map")} →</a>
   </div>
 
   {#if dataToDisplay["evolution"]}

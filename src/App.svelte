@@ -10,6 +10,7 @@
 
   import en from "../public/lang/en.json";
   import fr from "../public/lang/fr.json";
+import { baseurl } from "./stores";
 
   addMessages("en", en);
   addMessages("fr", fr);
@@ -21,8 +22,8 @@
 
 <div class="container">
   <Router>
-    <Route path="/" component={Map} />
-    <Route path="/company/:id" let:params>
+    <Route path={baseurl} component={Map} />
+    <Route path={baseurl + "company/:id"} let:params>
       {#key params.id}
         <Company id={params.id} />
       {/key}

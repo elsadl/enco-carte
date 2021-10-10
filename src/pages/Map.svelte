@@ -19,7 +19,7 @@
 
   let hiddenCountries = ["GL", "MA", "DZ", "TN", "EG"];
 
-  json("../data/nuts_with_data.json").then((json) => {
+  json("data/nuts_with_data.json").then((json) => {
     countriesEU = feature(json, json.objects.nutsrg);
 
     otherCountries = feature(json, json.objects.cntrg);

@@ -1,7 +1,9 @@
 <script>
+  import { baseurl } from "../stores";
+
   import { register, activeRoute } from "./Router.svelte";
 
-  export let path = "/";
+  export let path = baseurl;
   export let component = null;
 
   let params = {};
