@@ -54,9 +54,7 @@
 </script>
 
 <div id="map-container" style="min-height: {height}px" on:click={mapOnClick}>
-  <LocaleSwitcher
-    on:locale-changed={(e) => locale.set(e.detail)}
-  />
+  <LocaleSwitcher on:locale-changed={(e) => locale.set(e.detail)} />
   {#if countriesEU}
     <div id="map-wrapper" bind:offsetWidth={width}>
       <svg {width} {height}>
@@ -103,6 +101,9 @@
         <div id="map-text">
           <h1 id="map-title">{$_("map_title")}</h1>
           <p id="map-info">{$_("map_info")}</p>
+          <div id="map-logo">
+            <img src="logo.jpg" alt="Caring for profit" />
+          </div>
         </div>
       {/if}
     </div>
@@ -142,6 +143,11 @@
     color: #000;
   }
 
+  #map-logo img {
+    width: 160px;
+    border-radius: 10px;
+  }
+
   #sources {
     font-size: 0.85em;
     padding-top: 1.2em;
@@ -153,8 +159,15 @@
   }
 
   @media (max-width: 600px) {
-    #map-text, #map-tooltip {
+    #map-text,
+    #map-tooltip {
       font-size: 0.85em;
+    }
+  }
+
+  @media (max-width: 992px) {
+    #map-logo {
+      margin-top: 40px;
     }
   }
 
@@ -164,6 +177,11 @@
       width: 70%;
       top: 0;
       right: 0;
+    }
+
+    #map-logo img {
+      position: absolute;
+      bottom: 0;
     }
 
     #map-tooltip {

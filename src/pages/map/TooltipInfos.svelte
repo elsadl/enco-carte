@@ -224,6 +224,7 @@
   :global(.beds-grid span) {
     opacity: 0.6;
     font-style: italic;
+    font-weight: 300;
   }
 
   .label {

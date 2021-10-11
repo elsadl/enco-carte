@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import { locale } from "svelte-i18n";
 
-  let locales = ["en", "fr", "es"];
+  let locales = ["de", "en", "es", "fr", "it"];
 
   const dispatch = createEventDispatcher();
 

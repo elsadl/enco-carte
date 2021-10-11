@@ -11,11 +11,16 @@
   import en from "../public/lang/en.json";
   import es from "../public/lang/es.json";
   import fr from "../public/lang/fr.json";
+  import de from "../public/lang/de.json";
+  import it from "../public/lang/it.json";
+
   import { baseurl } from "./stores";
 
   addMessages("en", en);
   addMessages("es", es);
   addMessages("fr", fr);
+  addMessages("de", de);
+  addMessages("it", it);
 
   init({
     initialLocale: "fr",
