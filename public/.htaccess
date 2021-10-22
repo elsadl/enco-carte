@@ -1,0 +1,13 @@
+RewriteEngine On
+
+###
+# Si le fichier ou repertoire demande existe
+# ignorer toutes les regles qui suivent
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule "." - [skip=100]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule "." - [skip=100]
+#
+###
+
+RewriteRule .*		index.php [QSA,E=url_propre:$0,L]
