@@ -1,18 +1,12 @@
 <script>
   import { capitalize, capitalizeFirstLetter } from "../../Utils.svelte";
-  import { json } from "d3-fetch";
 
   import { dictionary, locale, _ } from "svelte-i18n";
   import { get } from "svelte/store";
   import { baseurl } from "../../stores";
   
   export let country;
-
-  let companiesDict;
-
-  json("data/dict_entreprises.json").then((json) => {
-    companiesDict = json;
-  });
+  export let companiesDict;
 
   function getTranslation(string) {
     if (typeof string != "string") {

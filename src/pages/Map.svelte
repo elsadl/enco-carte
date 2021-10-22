@@ -12,6 +12,7 @@
   let width;
   $: height = width / 1.2;
 
+  let companiesDict;
   let countriesEU;
   let otherCountries;
   let projection;
@@ -23,6 +24,10 @@
     countriesEU = feature(json, json.objects.nutsrg);
 
     otherCountries = feature(json, json.objects.cntrg);
+  });
+
+  json("data/dict_entreprises.json").then((json) => {
+    companiesDict = json;
   });
 
   $: projection = geoIdentity().reflectY(true).fitWidth(width, countriesEU);
@@ -94,7 +99,7 @@
       {#if $countrySelected}
         {#each countriesEU.features as feature}
           {#if $countrySelected == feature.properties.id}
-            <TooltipInfos country={feature.properties} />
+            <TooltipInfos {companiesDict} country={feature.properties} />
           {/if}
         {/each}
       {:else}
