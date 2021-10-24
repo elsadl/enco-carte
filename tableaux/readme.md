@@ -1,8 +1,8 @@
 # Mise à jour des données
 
 Chaque script génère deux fichiers :
-- **scriptEntreprises** → dict_entreprises.json (le lien entre le nom des entreprises et leur id) et entreprises.json (les données utilisées pour générées les pages entreprises)
-- **scriptPays** → dict_pays.json (les traductions des noms de pays, pour l'internationalisation) et nuts_with_data.json (le fond de carte de l'Europe avec les données de santé propres à chaque pays)
+- **scriptEntreprises** → `dict_entreprises.json` (le lien entre le nom des entreprises et leur id) et `entreprises.json` (les données utilisées pour générer les pages entreprises)
+- **scriptPays** → `dict_pays.json` (les traductions des noms de pays, pour l'internationalisation) et `nuts_with_data.json` (le fond de carte de l'Europe avec les données de santé propres à chaque pays)
 
 ### Pour générer les fichiers de données
 1. Les scripts et les données doivent être organisés comme dans ce repo
