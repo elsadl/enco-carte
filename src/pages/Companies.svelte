@@ -1,5 +1,6 @@
 <script>
   import { _ } from "svelte-i18n";
+  import { baseurl } from "../stores";
 
   export let entreprises;
   entreprises.sort((a, b) => a.nom.localeCompare(b.nom));
@@ -10,7 +11,7 @@
   <ul id="liste-entreprises">
     {#each entreprises as entreprise}
       <li>
-        <a class="to-company" href={"/company/" + entreprise.id}
+        <a class="to-company" href={baseurl + "company/" + entreprise.id}
           >{entreprise.nom}</a
         >
       </li>
